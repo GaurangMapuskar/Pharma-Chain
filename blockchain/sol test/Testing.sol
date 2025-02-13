@@ -1,14 +1,14 @@
 pragma solidity ^0.6.6;
 pragma experimental ABIEncoderV2;
 
-import './RawMaterial.sol';
+import '../contracts/RawMaterial.sol';
 // import './Supplier.sol';
 // import './Transporter.sol';
-import './Medicine.sol';
+import '../contracts/Medicine.sol';
 // import './Manufacturer.sol';
-import './MedicineW_D.sol';
+import '../contracts/MedicineW_D.sol';
 // import './Wholesaler.sol';
-import './MedicineD_C.sol';
+import '../contracts/MedicineD_C.sol';
 // import './Distributor.sol';
 // import './Customer.sol';
 

@@ -44,6 +44,9 @@ import DistributorReceiveProduct from './entities/Distributor/DistributorReceive
 import DistributorViewReceivedMedicines from './entities/Distributor/DistributorViewReceivedMedicines';
 import DistributorMedicineInfo from './entities/Distributor/DistributorMedicineInfo';
 
+//Import Customer
+import Customer from './entities/Customer/Customer.js'
+
 // Transaction imports
 import ViewTransations from './entities/Transactions/ViewTransactions';
 
@@ -185,7 +188,8 @@ class App extends Component {
             <Route exact path="/wholesaler/view-responses" component={(() => <ViewResponses account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
             <Route exact path="/wholesaler/transfer-medicine" component={(() => <TransferMedicine account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
             <Route exact path="/wholesaler/receive-medicine" component={(() => <WholesalerReceiveProduct account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} /> */}
-
+            
+            <Route path="/customer" render={(props) => (<Customer account={this.state.account} supplyChain={this.state.supplyChain} web3={this.state.web3} />)} />
 
             <Route path="" component={NotFound} />
             <Route path="/admin" component={Admin} />

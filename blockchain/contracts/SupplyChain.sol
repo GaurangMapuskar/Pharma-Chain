@@ -64,14 +64,14 @@ contract SupplyChain is Supplier, Transporter, Manufacturer, Wholesaler, Distrib
     
     mapping (address => userData) public userInfo;
     
-        function registerUser(bytes32 name, string[] calldata loc, uint role, address _userAddr) external onlyOwner {       
-        userInfo[_userAddr].name = name;
-        userInfo[_userAddr].userLoc = loc;
-        userInfo[_userAddr].role = roles(role);
-        userInfo[_userAddr].userAddr = _userAddr;
-        
-        emit UserRegister(_userAddr, name);
-    }
+     function registerUser(bytes32 name, string[] calldata loc, uint role, address _userAddr) external onlyOwner {       
+    userInfo[_userAddr].name = name;
+    userInfo[_userAddr].userLoc = loc;
+    userInfo[_userAddr].role = roles(role);
+    userInfo[_userAddr].userAddr = _userAddr;
+    
+    emit UserRegister(_userAddr, name);
+}
     
     function changeUserRole(uint _role, address _addr) external onlyOwner returns(string memory) {
         userInfo[_addr].role = roles(_role);
@@ -148,28 +148,29 @@ contract SupplyChain is Supplier, Transporter, Manufacturer, Wholesaler, Distrib
     }
     
     function manufacturerCreatesNewMedicine(
-        bytes32 _description,
-        address[] calldata _rawAddr,
-        uint _quantity,
-        address[] calldata _transporterAddr,
-        address _receiverAddr,
-        uint RcvrType
-    ) external returns(string memory) {
-        require(userInfo[msg.sender].role == roles.manufacturer, "Only Manufacturer can create Medicine");
-        require(RcvrType != 0, "Reciever Type should be defined");
-        
-        manufacturerCreatesMedicine(
-            msg.sender,
-            _description,
-            _rawAddr,
-            _quantity,
-            _transporterAddr,
-            _receiverAddr,
-            RcvrType
-        );
-        
-        return "Medicine created!";
-    }
+    bytes32 _description,
+    address[] calldata _rawAddr,
+    uint _quantity,
+    address[] calldata _transporterAddr,
+    address _receiverAddr,
+    uint RcvrType
+) external returns(string memory) {
+    require(userInfo[msg.sender].role == roles.manufacturer, "Only Manufacturer can create Medicine");
+    require(RcvrType != 0, "Reciever Type should be defined");
+    
+    manufacturerCreatesMedicine(
+        msg.sender,
+        _description,
+        _rawAddr,
+        _quantity,
+        _transporterAddr,
+        _receiverAddr,
+        RcvrType
+    );
+    
+    return "Medicine created!";
+}
+
     
 
     ///////////////  Wholesaler  ///////////////

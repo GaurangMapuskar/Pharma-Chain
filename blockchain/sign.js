@@ -4,10 +4,10 @@ const Web3 = require('web3');
 const web3 = new Web3(); // no provider needed for signing messages
 
 // Private key of the Ethereum account
-const privateKey = '0xc04dfc6a05f3c607f7353a0e36697aa73911520c54d4972adf1c1da5c9cf4f68';  // replace with your private key
+const privateKey = '0x27d33a497f8d180b24ff7da1aea0a5f083d1d2c11eff39251a84f5b2960d39d6';  // replace with your private key
 
 // Message you want to sign
-const message = '0x7EdAFfa3b2cAf0fc1BBAdC51d451503a8D7cBE70';
+const message = '';
 
 // Sign the message
 const signedMessage = web3.eth.accounts.sign(message, privateKey);

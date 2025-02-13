@@ -227,7 +227,7 @@ export default function Transporter({ ...rest }) {
         }
         return null;
       })}
-      <Redirect from="/transporter" to="/transporter/dashboard" />
+      <Redirect from="/transporter" to="/transporter/handle-package" />
     </Switch>
   );
   const classes = useStyles();

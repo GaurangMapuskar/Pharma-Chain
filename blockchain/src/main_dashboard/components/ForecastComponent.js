@@ -61,7 +61,7 @@ function ForecastComponent() {
     fullWidth: true,
     chartPadding: {
       right: 40,
-    },
+    }
   };
 
   return (

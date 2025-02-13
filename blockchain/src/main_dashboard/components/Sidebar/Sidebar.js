@@ -11,8 +11,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
-import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.js";
-import RTLNavbarLinks from "../Navbars/RTLNavbarLinks.js";
+import AdminNavbarLinks from '../../components/Navbars/AdminNavbarLinks';
+import RTLNavbarLinks from '../../components/Navbars/RTLNavbarLinks';
 
 import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
@@ -87,6 +87,7 @@ export default function Sidebar(props) {
           [ classes.logoLinkRTL ]: props.rtlActive
         })}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />

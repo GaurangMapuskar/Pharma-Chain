@@ -23,7 +23,7 @@ contract Medicine {
     address wholesaler;
     address distributor;
     address customer;
-    uint quantity;
+    uint public quantity;
     medicineStatus status;
     address txnContractAddress;
 

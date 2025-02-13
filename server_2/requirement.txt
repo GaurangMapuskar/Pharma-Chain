@@ -1,0 +1,8 @@
+flask
+polars
+nixtla
+flask-cors
+apscheduler
+web3
+pandas
+pyarrow
